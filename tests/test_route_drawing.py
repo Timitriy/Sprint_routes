@@ -1,8 +1,6 @@
 import pytest
 from pages.main_page import MainPage
 from data.test_data import PRESET_ADDRESSES
-
-
 @pytest.mark.route_drawing
 class TestRouteDrawing:
 

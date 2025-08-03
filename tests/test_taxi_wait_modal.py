@@ -1,19 +1,15 @@
 import re
 import pytest
-
 from data.test_data import PRESET_ADDRESSES
 from pages.taxi_flow_page import TaxiFlowPage
 from locators.taxi_flow_locators import TaxiFlowLocators as L
-
-
 @pytest.mark.taxi_order
 class TestTaxiWaitModal:
     """
     Полный happy-flow заказа тарифа «Рабочий»:
       • окно «Поиск машины»;
       • финальное окно «Заказ создан»;
-      • панель «Детали» + проверка цены, адресов, способа оплаты.
-    """
+      • панель «Детали» + проверка цены, адресов, способа оплаты."""
 
     def test_wait_and_done_details(self, order_page):
         flow = TaxiFlowPage(order_page.driver)
@@ -22,7 +18,7 @@ class TestTaxiWaitModal:
         # 1) запоминаем стоимость в активной карточке тарифа
         price_before = flow.active_tariff_price()          
 
-        # 2) оформляем заказ: Рабочий + столик ➜ «Ввести номер и заказать»
+        # 2) оформляем заказ: Рабочий + столик «Ввести номер и заказать»
         flow.prepare_and_submit()
 
         # 3) модалка «Поиск машины»

@@ -1,7 +1,5 @@
 import pytest
 from data.test_data import TARIFF_DESCRIPTIONS
-
-
 @pytest.mark.taxi_order
 class TestTaxiOrder:
     """Проверки формы заказа тарифа «Такси» (режим «Быстрый»)."""

@@ -1,15 +1,14 @@
 from .base_locators import By
 
-
 class TaxiOrderLocators:
     """Локаторы формы заказа тарифа «Такси»."""
 
-    # корень формы
+    # корень формы ────────────────────────────────────────────────
     ORDER_FORM = (By.CSS_SELECTOR, "div.order-modal")
 
-    # ─── тарифы ─────────────────────────────────────────────────────────────────
-    TARIFF_CARD_TITLES = (By.CSS_SELECTOR, "div.tcard-title")          # все названия
-    TARIFF_CARD_ACTIVE = (By.CSS_SELECTOR, "div.tcard.active")         # активная
+    # ─── тарифы ──────────────────────────────────────────────────
+    TARIFF_CARD_TITLES = (By.CSS_SELECTOR, "div.tcard-title")          
+    TARIFF_CARD_ACTIVE = (By.CSS_SELECTOR, "div.tcard.active")         
     TARIFF_CARD_BY_TITLE = (
         lambda name: (By.XPATH,
                       f'//div[@class="tcard-title" and normalize-space()="{name}"]/..')
@@ -24,7 +23,7 @@ class TaxiOrderLocators:
         )
     TOOLTIP_DESC = (By.CSS_SELECTOR, ".i-floating .i-dPrefix")
 
-    # ─── блок полей под тарифами ───────────────────────────────────────────────
+    # ─── блок полей под тарифами ───────────────────────────────────
     PHONE_FIELD   = (By.CSS_SELECTOR, "div.np-button .np-text")
     PAYMENT_FIELD = (By.CSS_SELECTOR, "div.pp-button .pp-text")
     COMMENT_INPUT = (By.CSS_SELECTOR, 'input#comment')

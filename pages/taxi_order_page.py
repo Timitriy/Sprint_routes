@@ -1,5 +1,4 @@
 from selenium.webdriver.common.action_chains import ActionChains
-
 from .base_page import BasePage
 from locators.taxi_order_locators import TaxiOrderLocators as L
 from selenium.webdriver.support import expected_conditions as EC
@@ -50,12 +49,8 @@ class TaxiOrderPage(BasePage):
 
     # наличие базовых полей под тарифами
     def basic_fields_present(self) -> bool:
-        """
-        Проверяем, отображаются ли все четыре обязательных поля под блоком
-        тарифов: Телефон, Способ оплаты, Комментарий, Требования к заказу.
-        """
+        """Проверяем, отображаются ли все четыре обязательных поля под блоком тарифов: Телефон, Способ оплаты, Комментарий, Требования к заказу."""
         from locators.taxi_order_locators import TaxiOrderLocators as L
-
         return all(
             self.driver.find_element(*loc).is_displayed()
             for loc in (L.PHONE_FIELD, L.PAYMENT_FIELD,
