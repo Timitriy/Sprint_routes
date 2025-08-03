@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Envs
+venv/
+.env
+
+# Pytest cache
+.pytest_cache/
+
+# Allure
+allure-results/
+allure-report/
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# виртуальное окружение
+venv/
+.venv/
+
+# артефакты Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# прочие сборочные каталоги
+dist/
+build/
